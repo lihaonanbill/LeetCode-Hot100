@@ -1,0 +1,16 @@
+hot 100的做题顺序是由易到难，由基础到复杂，我在这里记录一下这个index方便后续梳理
+1. getInsecgetIntersectionNode
+2. reverseList
+3. isPalindrome
+4. hasCycle
+5. mergeTwoLists
+6. addTwoNumbers
+7. removeNthFromEnd
+8. swapPairs
+9. reverseKGroup
+10. copyRandomList
+    - 插值法
+11. sortList
+    - 算法思路：自底向上归并
+12. mergeKLists
+13. LRUCache
