@@ -87,3 +87,102 @@
 
 time: 260125
 git各种命令本质上是在维护.git文件夹，带有.git文件夹的目录就是本地仓库
+
+
+
+
+
+## 开源项目贡献流程（一页速查版）
+
+### 前提
+- 你没有目标仓库（A/repo）的写权限
+- 通过 **Fork + Pull Request** 方式贡献代码
+
+---
+
+### 1. Fork 原仓库
+- GitHub：进入 `A/repo`
+- 点击右上角 **Fork**
+- 得到你自己的仓库：`B/repo`
+
+---
+
+### 2. Clone 自己的 Fork
+```bash
+git clone https://github.com/B/repo.git
+cd repo
+```
+
+---
+
+### 3. 添加 upstream（指向原仓库 A）
+```bash
+git remote add upstream https://github.com/A/repo.git
+git remote -v
+```
+
+---
+
+### 4. 同步原仓库最新代码
+```bash
+git fetch upstream
+git switch main
+git merge upstream/main
+```
+
+---
+
+### 5. 新建分支进行开发（不要在 main 上改）
+```bash
+git switch -c my-branch
+```
+
+---
+
+### 6. 本地提交修改
+```bash
+git add .
+git commit -m "fix: concise description"
+```
+
+---
+
+### 7. Push 分支到自己的仓库（B/repo）
+```bash
+git push -u origin my-branch
+```
+
+---
+
+### 8. 发起 Pull Request（GitHub）
+- base repo：`A/repo`
+- base branch：`main`
+- head repo：`B/repo`
+- head branch：`my-branch`
+- 填写标题和说明，创建 PR
+
+---
+
+### 9. 根据 Review 更新 PR（如需要）
+```bash
+git add .
+git commit -m "address review comments"
+git push
+```
+
+> PR 会自动更新，无需新建
+
+---
+
+### 10. PR 合并后同步 fork（可选）
+```bash
+git switch main
+git fetch upstream
+git merge upstream/main
+git push origin main
+```
+
+---
+ps: git pull=git fetch+git merge
+
+

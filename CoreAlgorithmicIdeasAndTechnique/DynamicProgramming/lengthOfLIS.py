@@ -25,4 +25,7 @@ i = bisect.bisect_left(tails, x)
 
 这样的做法一定能保证找到最长递增子序列的长度吗？
 
+deepseek的证明(又是归纳法doge)
+https://chat.deepseek.com/share/q8amr9bd96vrvd9120
+
 """
