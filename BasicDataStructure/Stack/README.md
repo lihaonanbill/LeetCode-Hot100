@@ -1,0 +1,10 @@
+1. 20.isvalid
+    - 栈，字符串
+2. 155.MinStack
+    - 栈，设计
+3. 394.decodeString
+    - 栈，递归，字符串
+4. 739.dailyTemperature
+    - 栈，数组，单调栈
+5. 84.largestRectangleArea
+    - 栈，数组，单调栈
