@@ -1,10 +1,20 @@
 1. 46.permute
     - 数组，回溯
-5. 79.exist
+2. 78.subsets
+    - 位运算，数组，回溯
+    - 可以看AI画的树状图，可以帮助理解
+3. 12.letterCombinations
+    - 哈希表，字符串，回溯
+    - 这里的回溯是有return的，但是78.subsets里面没有，注意这两者的区别和原因
+4. 39.combinationSum
+    - 数组，回溯
+5. 22.generateParenthesis
+    - 字符串，动态规划，回溯
+6. 79.exist
     - 深度有限搜索，数组，字符串，回溯，矩阵
     - 有点小难>_<
-6. 131.partition
+7. 131.partition
     - 字符串，动态规划，回溯
     - 为什么回溯枚举时间复杂度是O(n · 2^(n-1))?
-7. 51.N皇后
+8. 51.N皇后
     - 数组，回溯
