@@ -17,7 +17,7 @@ class Solution:
             if farthest >= n - 1:
                 return True
 
-        return True  # 能遍历完说明都可达（包括 n=1 的情况）
+        # return True  # 能遍历完说明都可达（包括 n=1 的情况）
 
 """
 Docstring for CoreAlgorithmicIdeasAndTechnique.GreedyAlgorithm.canjump
@@ -26,5 +26,9 @@ Docstring for CoreAlgorithmicIdeasAndTechnique.GreedyAlgorithm.canjump
     当前位置 i 如果已经 超过 farthest，说明连 i 都到不了，后面更不可能到 → 返回 False
     否则用 farthest = max(farthest, i + nums[i]) 更新最远可达
     一旦 farthest >= n-1，说明能到最后 → 返回 True
+
+
+1. farthest >= n - 1就说明一定可以到达吗
+2. 什么是能遍历完说明可达
 
 """
