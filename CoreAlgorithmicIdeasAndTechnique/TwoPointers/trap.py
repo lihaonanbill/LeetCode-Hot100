@@ -29,9 +29,30 @@ class Solution:
 
         return water
 """
+如果：
+    height[left] < height[right]
+    那么当前位置 left 能接多少水，只由 leftMax 决定。
+    因为此时右边一定存在一个至少和 height[right] 一样高的柱子，而 height[right] > height[left]，
+    说明右侧挡板是够用的，真正限制当前位置装水高度的是左边最高值。
+所以：
+    若 height[left] < height[right]
+        处理 left
+    否则
+        处理 right
 
+可是如果height[left] < height[right]， 而right_max<left_max怎么办？
+
+在双指针接雨水算法中，当 height[left] < height[right] 时，我们使用 left_max 来计算左边指针位置的水量。你担心如果此时 right_max < left_max，那么实际右边最高可能小于 left_max，导致计算偏大。但通过分析算法过程，可以证明这种情况实际上不会发生，或者即使发生，算法依然正确。
+
+关键原因
+    left_max 记录的是左边已遍历部分的最大值，而 right_max 记录的是右边已遍历部分的最大值。
+    当进入左边分支（即 height[l] < height[r]）时，左边指针 l 正在移动。如果 left_max 大于右边整体的最大值（即 max(height[r], right_max)），那么左边指针应该停留在产生 left_max 的那个位置，因为只有右边出现更大的值才能让左边指针离开该位置。但此时右边整体最大值小于 left_max，所以左边指针不会移动，矛盾。
+    因此，在左边分支中，必然有 left_max <= max(height[r], right_max)，即左边最高不超过右边实际最高，所以用 left_max 计算水量是正确的。
+        
 T: O(n)
 S: 只用了场数个变量(l, r, left_max, right_max, water)
     O(1)
+
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
 
 """
